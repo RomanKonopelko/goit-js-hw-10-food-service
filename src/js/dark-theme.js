@@ -20,9 +20,9 @@ toggle.addEventListener('click', () => {
   }
 });
 
-console.log(localStorage);
 if (localStorage.Theme == LIGHT || localStorage.Theme === null) {
   toggle.checked = false;
+  body.setAttribute('class', LIGHT);
 } else if (localStorage.Theme == DARK) {
   toggle.checked = true;
   body.setAttribute('class', DARK);
