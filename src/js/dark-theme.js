@@ -1,14 +1,11 @@
 import refs from './refs.js';
-const { body } = refs;
-const { toggle } = refs;
-
+const { body, toggle } = refs;
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
 
-const { LIGHT } = Theme;
-const { DARK } = Theme;
+const { LIGHT, DARK } = Theme;
 
 toggle.addEventListener('click', () => {
   if (toggle.checked) {
@@ -20,10 +17,10 @@ toggle.addEventListener('click', () => {
   }
 });
 
-if (localStorage.Theme == LIGHT || localStorage.Theme === null) {
-  toggle.checked = false;
-  body.setAttribute('class', LIGHT);
-} else if (localStorage.Theme == DARK) {
+if (localStorage.Theme === DARK) {
   toggle.checked = true;
   body.setAttribute('class', DARK);
+} else {
+  toggle.checked = false;
+  body.setAttribute('class', LIGHT);
 }
